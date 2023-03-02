@@ -1,0 +1,62 @@
+*
+    margin: 0
+    padding: 0
+
+
+:root
+    --slate-100: #f1f5f9
+    --slate-200: #e2e8f0
+    --slate-400: #94a3b8
+    --slate-300: #cbd5e1
+    --emerald-400: #34d399
+    --rose-400: #fb7185
+
+
+.wrapper //body
+    height: 100vh
+    width: 100%
+    background-color: var(--slate-300)
+
+    display: flex
+    justify-content: center
+    align-items: center
+
+.board
+    padding: 10px
+    border-radius: 20px
+
+    display: grid
+    gap: 10px
+    grid-template-columns: repeat(3, 1fr)
+    grid-template-rows: repeat(3, 1fr) 
+
+    .square
+        margin: auto
+        width:  80px
+        height: 80px
+        background-color: var(--slate-200)
+        border-radius: 15px
+        border-top: 1px solid white
+        border-left: 0.75px solid var(--slate-100)
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)
+        cursor: pointer
+
+        display: flex
+        justify-content: center
+        align-items: center
+        @mixin player
+            transition: transform 100ms ease
+            transform: scale(0.1)
+            background-color: var(--emerald-400)
+            height: 40px
+            width: 40px
+            border-radius: 999px
+        
+        .player-one
+            @include player
+        .player-two
+            @include player
+            background-color: var(--rose-400)
+            
+        .grow
+            transform: scale(1)
