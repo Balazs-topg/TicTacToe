@@ -17,8 +17,18 @@
   width: 100%;
   background-color: var(--slate-300);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.wrapper .results {
+  width: 260px;
+  height: 80px;
+  background-color: var(--slate-200);
+  border-radius: 15px;
+  border-top: 1px solid white;
+  border-left: 0.75px solid var(--slate-100);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 }
 
 .board {
