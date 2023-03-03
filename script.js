@@ -13,7 +13,33 @@ let filedOcupiedBy = {
   num6: "unoccupied",
   num7: "unoccupied",
   num8: "unoccupied",
+  clearBoard() {
+    this.num0 = "unoccupied";
+    this.num1 = "unoccupied";
+    this.num2 = "unoccupied";
+    this.num3 = "unoccupied";
+    this.num4 = "unoccupied";
+    this.num5 = "unoccupied";
+    this.num6 = "unoccupied";
+    this.num7 = "unoccupied";
+    this.num8 = "unoccupied";
+    for (let i = 0; i < squares.length; i++) {
+      squares[i].innerHTML = ""
+    }
+    isPlayerOnesTurn = true
+  },
 };
+
+let cover = document.querySelector(".cover");
+
+let winnerText = document.querySelector(".winner");
+
+let restartBtn = document.querySelector(".restart");
+
+restartBtn.addEventListener("click", () => {
+  cover.classList.add("hidden");
+  filedOcupiedBy.clearBoard();
+});
 
 function checkWin(playerName) {
   //there are 8 win possibilities (actually 16 if you cout both players)
@@ -49,7 +75,7 @@ function checkWin(playerName) {
     filedOcupiedBy.num4 === playerName &&
     filedOcupiedBy.num7 === playerName
   ) {
-    alert("player one wins");
+    return true;
   } else if (
     filedOcupiedBy.num2 === playerName &&
     filedOcupiedBy.num5 === playerName &&
@@ -93,8 +119,14 @@ for (let i = 0; i < squares.length; i++) {
         mark.classList.add("grow");
       }
       isPlayerOnesTurn = !isPlayerOnesTurn;
-      if (checkWin("playerOne")) {alert("player one won the game")};
-      if (checkWin("playerTwo")) {alert("player two won the game")};
+      if (checkWin("playerOne")) {
+        cover.classList.remove("hidden");
+        winnerText.innerHTML = "Green";
+      }
+      if (checkWin("playerTwo")) {
+        cover.classList.remove("hidden");
+        winnerText.innerHTML = "Red";
+      }
     }
 
     //'<div class="player-one" style="height: 50%; width: 50%; border-radius: 999px; transform: scale(0); transition: all;"></div>';

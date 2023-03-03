@@ -7,10 +7,23 @@
     <title>tic tac toe</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
   </head>
   <body>
     <div class="wrapper">
+      <div class="cover hidden">
+        <div>
+          <h2>
+            <span><span class="winner"></span> has won the game! </span><span class="material-symbols-outlined restart">
+            replay
+            </span>
+          </h2>
+        </div>
+      </div>
+
       <div class="board">
         <div class="square 1"></div>
         <div class="square 2"></div>
@@ -22,10 +35,6 @@
         <div class="square 8"></div>
         <div class="square 9"></div>
       </div>
-        <div class="results"><span class="material-symbols-outlined">
-          restart_alt
-          </span></div>
-
     </div>
   </body>
 </html>
